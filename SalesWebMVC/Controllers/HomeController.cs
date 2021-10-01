@@ -23,6 +23,14 @@ namespace SalesWebMVC.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Contato:";
+            ViewData["E-mail"] = "isaque_schuwarte@hotmail.com";
+            ViewData["Whats"] = "What'sApp";
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
