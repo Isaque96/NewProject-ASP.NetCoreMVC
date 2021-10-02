@@ -26,7 +26,7 @@ namespace SalesWebMVC.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Contato:";
-            ViewData["E-mail"] = "isaque_schuwarte@hotmail.com";
+            ViewData["E-mail"] = "E-mail";
             ViewData["Whats"] = "What'sApp";
             return View();
         }
