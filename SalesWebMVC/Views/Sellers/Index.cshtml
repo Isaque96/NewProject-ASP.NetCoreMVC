@@ -6,9 +6,13 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<p>
+    <a asp-action="Create" class="btn btn-outline-success">Create New</a>
+</p>
+
 <table class="table table-striped table-hover table-secondary">
     <thead>
-        <tr class="table-dark">
+        <tr class="table-info">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
