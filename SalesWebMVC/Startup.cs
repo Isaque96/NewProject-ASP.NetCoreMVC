@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SalesWebMVC
 {
@@ -25,10 +26,10 @@ namespace SalesWebMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-
             services.AddDbContext<SalesWebMVCContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCContext")));
+                    options.UseMySQL(Configuration.GetConnectionString("SalesWebMVCContext")));
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
