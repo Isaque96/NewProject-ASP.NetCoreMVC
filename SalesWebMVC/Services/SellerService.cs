@@ -41,9 +41,9 @@ namespace SalesWebMVC.Services
                 var obj = _context.Seller.Find(id);
                 _context.Seller.Remove(obj);
                 await _context.SaveChangesAsync();
-            } catch (DbUpdateException e)
+            } catch (DbUpdateException)
             {
-                throw new IntegrityException(e.Message);
+                throw new IntegrityException("Can't delete Seller because he/she has Sales!");
             }
         }
 
@@ -58,8 +58,7 @@ namespace SalesWebMVC.Services
             {
                 _context.Update(obj);
                 await _context.SaveChangesAsync();
-            }
-            catch(DbUpdateConcurrencyException e)
+            } catch(DbUpdateConcurrencyException e)
             {
                 throw new DbConcurrencyException(e.Message);
             }
